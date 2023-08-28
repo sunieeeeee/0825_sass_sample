@@ -1,3 +1,125 @@
 @use './mixin' as *;
 @use './variable' as *;
 
+article {
+    > div {
+        width: $content;
+        @include margin;
+        padding: $s10 * 9 0;
+        h3 {
+            margin-bottom: $s10 * 8;
+            @include center;
+            font-size: $font-hn;
+            color: $dark;
+            font-weight: bold;
+        }
+    }
+}
+
+div.btn {
+    position: relative;
+    @include layout;
+    margin-bottom: $s10;
+    p.left {
+        font-size: $s12;
+        color: $font;
+    }
+    p.right {
+        width: 190px;
+        padding: $s12 0;
+        @include layout($start: center);
+        @include border($width: $font);
+        border-radius: 19px;
+        font-size: $basic;
+        color: $font;
+    }
+    ul {
+        position: absolute;
+        right: 0;
+        top: $s10 * 4;
+        width: 190px;
+        @include border($width: $font);
+        border-bottom: none;
+        background-color: $white;
+        z-index: 100;
+        display: none;
+        li {
+            border-bottom: 1px solid $font;
+            line-height: 25px;
+            @include center;
+            font-size: $s12;
+            color: $font;
+            cursor: pointer;
+        }
+    }
+}
+
+div.gallery {
+    @include layout($wrap: wrap);
+    figure {
+        width: 270px;
+        margin-bottom: $s10 * 5;
+        position: relative;
+        > img {
+            margin-bottom: $s10 * 3;
+        }
+    }
+    dl {
+        @include center;
+        dt {    
+            margin-bottom: $s10;
+            color: $dark;
+            font-weight: bold;
+        }
+        dd {
+            &:nth-child(2) {
+                margin-bottom: $s10;
+                > ins {
+                    margin: 0 $s10;
+                    color: $red;
+                }
+                > del {
+                    margin: 0 $s10;
+                    color: $light;
+                }
+            }
+            &:nth-child(3) {
+                @include layout;
+                button {
+                    @include layout($start: center);
+                    @include border($width: $light);
+                    background-color: $white;
+                    &:first-child{
+                        width: 133px;
+                        height: 37px;
+                        color: $dark;
+                        border-radius: 18px;
+                    }
+                    &:last-child{
+                        width: 37px;
+                        height: 37px;
+                        border-radius: 50%;
+                    }
+                }
+            }
+            &:nth-child(4) {
+                position: absolute;
+                right: 0;
+                bottom: 145px;
+                b {
+                    width: $s10 * 5;
+                    height: $s10 * 5;
+                    display: block;
+                    background-color: $red;
+                    color: $white;
+                    border-radius: 50%;
+                    @include layout($start: center);
+                }
+            }
+        }
+    }
+}
+
+
+
+

@@ -1,0 +1,51 @@
+@use './variable' as *;
+@use './mixin' as *;
+
+#footer {
+    padding: $s10*9 0 $s10*5;
+    background-color: $blight;
+}
+
+aside {
+    width: $content;
+    @include margin ($bottom: 50px);
+    @include layout ($wrap: wrap, $start: start);
+    dl {
+        width: 25%;
+        dt {
+            font-size: $large;
+            font-weight: bold;
+            margin-bottom: $s10 * 3;
+            color: $dark;
+        }
+        dd {
+            margin-bottom: $s10;
+            a {
+                color: $light;
+            }
+        }
+        &:nth-child(1) {
+            address {
+                font-style: normal;
+                font-weight: bold;
+                width:247px;
+                font-size: $large;
+                line-height: $s10 * 3;
+            }
+        }
+    }
+}
+
+footer {
+    width: $content;
+    @include margin;
+    @include layout($direction: row);
+    ul {
+        @include layout($start: flex-start);
+    }
+    small {
+        font-size: $s12;
+        color: $light;
+    }
+}
+

@@ -1,0 +1,52 @@
+//size
+$size-content: 1173px;
+$size-basic: 10px;
+
+$size-12: 12px;
+$size-50: 50px;
+$size-30: 30px;
+
+//font
+$font-small: 11px;
+$font-basic: 12px;
+$font-large: 14px;
+$font-hn: 40px;
+
+//color
+$color-font: #212121;
+$font-light: #aaaaaa;
+$font-dark: #25282c;
+$font-red: #ca7379;
+
+$back-white: #fff;
+$back-dark: #e8e8e8;
+$back-light: #fafafa;
+
+//단축형: 꼭 해야 되는 것은 아니다. 
+//(변수 한번에 끝내지 않고 두번,세번에 끝내는 작업)
+$white: $back-white;
+$black: #000;
+
+$full: 100%;
+$content: $size-content;
+$basic: $size-basic;
+$s10: $size-basic;
+$s12: $size-12;
+$s50: $size-50;
+$s30: $size-30;
+
+$small: $font-small;
+$large: $font-large;
+$basic: $font-basic;
+
+$font: $color-font;
+$light: $font-light;
+$dark: $font-dark;
+$red: $font-red;
+
+$bdark: $back-dark;
+$blight: $back-light;
+
+
+
+

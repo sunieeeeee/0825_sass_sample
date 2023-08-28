@@ -1,54 +1,148 @@
+@use './variable' as *;
+@use './mixin' as *;
+
 header {
     padding: 72px 0 22px;
-    background-color: #e8e8e8;
+    background-color: $bdark;
     position: relative;
-    > div.top {
-        position: absolute;
-        width: 100%;
-        padding: 16px 0;
-        background-color: #fff;
-        left: 0;
-        top: 0;
-    }
 }
-div.bottom {
-    > h1 {
-        text-align: center;
-        margin-bottom: 48px;
+
+header>div.bottom {
+    > h1{
+        @include center;
+        // margin-bottom: $s10 * 5;
+        margin-bottom: $s10 * 5;
     }
-    > nav >  ul {
-        display: flex;
-        justify-content: center;
-        > li {
-            margin: 0 25px;
-            padding-bottom: 10px;
-            position: relative;
-            > a {
-                font-size: 12px;
-                color: #25282c;
-            }
-            > span {
-                position: absolute;
-                left: 0;
-                bottom: 0;
-                width: 100%;
-                height: 2px;
-                background-color: transparent;
-            }
-            &:hover > span {
-                background-color: #000;
+    > nav {
+        ul {
+            @include layout($start: center);
+            li {
+                // margin: 0 $s10 * 3;
+                margin: 0 $s10 * 3;
+                padding-bottom: $s10;
+                position: relative;
+                a {
+                    font-size: $s12;
+                    color: $dark;
+                }
+                span {
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: $full;
+                    height: 2px;
+                    background-color: transparent;
+                }
+                &:hover {
+                    span {
+                        background-color: $black;
+                    }
+                }
             }
         }
     }
 }
 
-div.top {
-    > p {
-        width: 1173px;
-        margin: 0 auto;
+header>div.top {
+    position: absolute;
+    width: $full;
+    padding: 16px 0;
+    background-color: $white;
+    left: 0;
+    top: 0;
+    p {
+        width: $content;
+        @include margin;
         a {
-            font-size: 12px;
-            color: #212121;
+            font-size: $basic;
+            color: $font;
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// header {
+//     padding: 72px 0 22px;
+//     background-color: #e8e8e8;
+//     position: relative;
+//     > div.top {
+//         position: absolute;
+//         width: 100%;
+//         padding: 16px 0;
+//         background-color: #fff;
+//         left: 0;
+//         top: 0;
+//     }
+// }
+// div.bottom {
+//     > h1 {
+//         text-align: center;
+//         margin-bottom: 48px;
+//     }
+//     > nav >  ul {
+//         display: flex;
+//         justify-content: center;
+//         > li {
+//             margin: 0 25px;
+//             padding-bottom: 10px;
+//             position: relative;
+//             > a {
+//                 font-size: 12px;
+//                 color: #25282c;
+//             }
+//             > span {
+//                 position: absolute;
+//                 left: 0;
+//                 bottom: 0;
+//                 width: 100%;
+//                 height: 2px;
+//                 background-color: transparent;
+//             }
+//             &:hover > span {
+//                 background-color: #000;
+//             }
+//         }
+//     }
+// }
+
+// div.top {
+//     > p {
+//         width: 1173px;
+//         margin: 0 auto;
+//         a {
+//             font-size: 12px;
+//             color: #212121;
+//         }
+//     }
+// }
